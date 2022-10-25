@@ -23,7 +23,7 @@ export async function createCheck(
 ) {
   const check = await github.checks.create({
     ...context.repo,
-    name: "Deploy Preview",
+    name: "deploy-preview",
     head_sha: context.payload.pull_request?.head.sha,
     status: "in_progress",
   });

@@ -149,7 +149,7 @@ async function run() {
       details_url: urls[0],
       conclusion: "success",
       output: {
-        title: `Deploy preview succeeded`,
+        title: `Preview deploy successful`,
         summary: getURLsMarkdownFromChannelDeployResult(deployment),
       },
     });
@@ -159,7 +159,7 @@ async function run() {
     await finish({
       conclusion: "failure",
       output: {
-        title: "Deploy preview failed",
+        title: "Preview deploy unsuccessful",
         summary: `Error: ${e.message}`,
       },
     });

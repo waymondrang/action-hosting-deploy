@@ -52,15 +52,11 @@ export function getChannelDeploySuccessComment(
   const { expireTime } = interpretChannelDeployResult(result);
 
   return `
-Visit the preview URL for this PR (updated for commit ${commit}):
+A preview link has been generated for this PR (commit ${commit}). It will expire ${new Date(
+    expireTime
+  ).toUTCString()}.
 
-${urlList}
-
-<sub>(expires ${new Date(expireTime).toUTCString()})</sub>
-
-${BOT_SIGNATURE}
-
-<sub>Sign: ${deploySignature}</sub>`.trim();
+${urlList}`.trim();
 }
 
 export async function postChannelSuccessComment(
